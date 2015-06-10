@@ -1,0 +1,28 @@
+{
+  "name": "async-gist",
+  "version": "1.0.0",
+  "description": "Asynchronously load gists.",
+  "main": "gist.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matthewspencer/gist.git"
+  },
+  "keywords": [
+    "gist",
+    "github",
+    "jquery",
+    "asynchronous"
+  ],
+  "author": "Matthew Spencer <hello@thisismatthew.com>",
+  "license": "Apache-2",
+  "bugs": {
+    "url": "https://github.com/matthewspencer/gist/issues"
+  },
+  "homepage": "https://github.com/matthewspencer/gist",
+  "dependencies": {
+    "jquery": "^2.1.4"
+  }
+}

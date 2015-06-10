@@ -2,9 +2,10 @@
   "name": "async-gist",
   "version": "1.0.0",
   "description": "Asynchronously load gists.",
-  "main": "gist.js",
+  "main": "gist.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-js": "uglifyjs gist.js -o gist.min.js -c -m"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,8 @@
   "homepage": "https://github.com/matthewspencer/gist",
   "dependencies": {
     "jquery": "^2.1.4"
+  },
+  "devDependencies": {
+    "uglify-js": "^2.4.23"
   }
 }

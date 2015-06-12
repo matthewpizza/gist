@@ -11,9 +11,16 @@
 }(function ($) {
   'use strict';
 
-  var Gist = function (element) {
-    this.$gist = $(element)
+  var Gist = function (element, options) {
+    this.options = options
+    this.$gist   = $(element)
     this.request()
+  }
+
+  Gist.DEFAULTS = {
+    timeout: 1000,
+    success: onAjaxSuccess,
+    error: onAjaxError
   }
 
   Gist.prototype.request = function () {
@@ -65,11 +72,12 @@
 
   function Plugin(option) {
     return this.each(function () {
-      var $this = $(this)
-      var data  = $this.data('gist-initialized')
+      var $this   = $(this)
+      var data    = $this.data('gist-initialized')
+      var options = $.extend({}, Gist.DEFAULTS, $this.data(), typeof option == 'object' && option)
 
       if (! data) {
-        $this.data('gist-initialized', (data = new Gist(this)))
+        $this.data('gist-initialized', (data = new Gist(this, options)))
       }
     })
   }

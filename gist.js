@@ -24,6 +24,7 @@
   }
 
   Gist.prototype.request = function () {
+    var gist = this
     var id   = this.$gist.data('gist')
     var file = this.$gist.data('file') || false
     var url  = 'https://gist.github.com/' + id + '.json'
@@ -31,8 +32,6 @@
     if (file) {
       url += '?file=' + file
     }
-
-    var self = this
 
     $.ajax({
       url: url,

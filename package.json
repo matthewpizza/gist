@@ -1,6 +1,6 @@
 {
   "name": "async-gist",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Asynchronously load gists.",
   "main": "gist.min.js",
   "scripts": {

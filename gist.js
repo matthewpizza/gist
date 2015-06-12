@@ -37,12 +37,9 @@
       url: url,
       dataType: 'jsonp',
       cache: true,
-      success: function (data, textStatus, jqXHR) {
-        self.onAjaxSuccess(self, data, textStatus, jqXHR)
-      },
-      error: function (jqXHR, textStatus, errorThrown) {
-        self.onAjaxError(self, jqXHR, textStatus, errorThrown)
-      }
+      timeout: gist.options.timeout,
+      success: gist.options.success,
+      error: gist.options.error
     })
   }
 

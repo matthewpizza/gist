@@ -37,6 +37,10 @@
       url: url,
       dataType: 'jsonp',
       cache: true,
+      beforeSend: function ( xhr ) {
+        xhr.url   = url
+        xhr.$gist = gist.$gist
+      },
       timeout: gist.options.timeout,
       success: gist.options.success,
       error: gist.options.error

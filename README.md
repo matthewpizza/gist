@@ -30,6 +30,18 @@ Or if you want to embed a specific file from a gist:
 <div data-gist="005044062dd93fbe59ce" data-file="access_to_tools-sh"></div>
 ```
 
+## Installation
+
+This library can be install with npm, bower, or just by downloading the zip. It is written in the UMD pattern to support AMD, CommonJS, and global usage.
+
+**npm**
+
+`npm install async-gist --save`
+
+**bower**
+
+`bower install async-gist --save`
+
 ## Options
 
 A few options can be passed, for example, here we make the timeout 2 seconds:

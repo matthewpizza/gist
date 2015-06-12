@@ -47,9 +47,9 @@
     })
   }
 
-  Gist.prototype.onAjaxSuccess = function (self, data, textStatus, jqXHR) {
+  function onAjaxSuccess(data, textStatus, jqXHR) {
     if (! data || ! 'div' in data) {
-      self.onAjaxError()
+      onAjaxError(jqXHR)
       return
     }
 
@@ -62,12 +62,15 @@
     // When loading different files from the same gist
     // on one page, there will be duplicate ids.
     //
-    // That should be fixed.
-    self.$gist.html(data.div)
+    // This should fix that.
+    var div = data.div.replace(/id="[^"]*"/, '')
+
+    jqXHR.$gist.html(div)
   }
 
-  Gist.prototype.onAjaxError = function (self, jqXHR, textStatus, errorThrown) {
-    self.$gist.html(':(')
+  function onAjaxError(jqXHR) {
+    var url = jqXHR.url.replace('.json', '').replace('?file=', '#file-')
+    jqXHR.$gist.html('<a href="' + url + '" target="_blank">View gist</a>')
   }
 
   function Plugin(option) {

@@ -2,7 +2,7 @@
   "name": "async-gist",
   "version": "1.0.1",
   "description": "Asynchronously load gists.",
-  "main": "gist.min.js",
+  "main": "gist.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-js": "uglifyjs gist.js -o gist.min.js -c -m"

@@ -1,7 +1,7 @@
 {
   "name": "async-gist",
-  "version": "1.0.1",
   "main": "gist.js",
+  "version": "1.1.0",
   "homepage": "https://github.com/matthewspencer/gist",
   "authors": [
     "Matthew Spencer <hello@thisismatthew.com>"
